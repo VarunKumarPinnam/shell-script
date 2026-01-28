@@ -17,3 +17,10 @@ SUM=$(($num1+$num2))
 echo "sum is : $SUM"
 
 
+#Array
+
+SPORTS=("cricker" "vollyball" "kabaddi")
+
+echo "Sports are : ${SPORTS[@]}"
+
+
