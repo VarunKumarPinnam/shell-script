@@ -1,12 +1,19 @@
 #!/bin/bash
 
-echo "enter first number: "
-read num1
-echo "enter second number: "
-read num2
+# echo "enter first number: "
+# read num1
+# echo "enter second number: "
+# read num2
 
-SUM=$(($num1 + $num2))
+# SUM=$(($num1 + $num2))
 
-echo " Sum of 2 numbers : $SUM"
+# echo "Sum of 2 numbers : $SUM"
+
+read -p "enter first num: " num1
+read -p "enter second num: " num2
+
+SUM=$(($num1+$num2))
+
+echo "sum is : $SUM"
 
 
