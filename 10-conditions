@@ -11,6 +11,7 @@ fi
 if [ "$num1" -gt "$num2" ]; then 
     echo " $num1 is gretaer than $num2"
 elif [ "$num1" -lt "$num2" ];then 
+    echo " $num2 is gretaer than $num1"
 else
     echo "Both numbers are equal"
 fi
