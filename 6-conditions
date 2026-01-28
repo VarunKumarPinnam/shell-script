@@ -2,9 +2,9 @@
 
 read -p "enter num:" num
 
-if [ $num gt 20 ] then;
+if [ $num -gt 20 ] then;
     echo " Given number is greater than 20"
-elif [ $num eq 20 ] then;
+elif [ $num -eq 20 ] then;
     echo " given number is equal to 20"
 else
     echo "given number is less than 20"
