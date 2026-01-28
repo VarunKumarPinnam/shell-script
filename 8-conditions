@@ -1,0 +1,11 @@
+#!/bin/bash
+
+read -p "enter number :" num
+
+if [ $num -gt 0 ]; then
+    echo "Given number $num is postive number"
+elif [ $num -lt 0 ]; then 
+    echo "Given number $num is negative number"
+else
+    echo "Given number is $num"
+fi
