@@ -10,6 +10,7 @@ fi
 
 if [ "$num1" -gt "$num2" ]; then 
     echo " $num1 is gretaer than $num2"
+elif [ "$num1" -lt "$num2" ];then 
 else
-    echo "$num2 is greater than $num1"
+    echo "Both numbers are equal"
 fi
