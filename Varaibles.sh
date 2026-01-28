@@ -1,9 +1,9 @@
 #!/bin/bash
 
-P1=$1
-P2=$2
+#P1=$1
+#2=$2
 
-echo "$P1:: Hello $P2, How are you?"
-echo "$P2:: Hi $P1, I am fine thanks for asking. How are you doing?"
-echo "$P1:: doing fine. What are you learning $P2?"
-echo "$P2:: I am learning Shell. What about you?"
+echo "$1:: Hello $2, How are you?"
+echo "$2:: Hi $1, I am fine thanks for asking. How are you doing?"
+echo "$1:: doing fine. What are you learning $2?"
+echo "$2:: I am learning Shell. What about you?"
