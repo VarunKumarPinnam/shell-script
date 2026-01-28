@@ -5,7 +5,7 @@ read num1
 echo "enter second number: "
 read num2
 
-SUM =$(($num1 + $num2))
+SUM=$(($num1 + $num2))
 
 echo " Sum of 2 numbers : $SUM"
 
