@@ -6,7 +6,7 @@ if ! [[ "$num" =~ ^-?[0-9]+$ ]];then
     echo " please enter a valid number"
     exit 1;
 fi
-if [ "$num/2" eq 1 ]; then 
+if [ "$num/2" -eq 1 ]; then 
     echo "the given number $num is odd number"
 else
     echo "the given number $num is even number"
