@@ -7,7 +7,7 @@ if [ $USERID -ne 0 ];then
     exit 1
 fi
 
-echi  "Installing  Nginix"
+echo  "Installing  Nginix"
 dnf install nginxx -y
 
 if [ $? -ne 0 ]; then
