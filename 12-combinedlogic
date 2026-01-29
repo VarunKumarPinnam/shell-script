@@ -18,9 +18,9 @@ AGE=$(( ($current_seconds - $dob_seconds) / 31557600  ))
 
 
 if [ "$AGE" -ge 18 ]; then 
-    echo " Eligible for voting"
+    echo " Eligible for voting age $AGE"
 else
-    echo "Not eligible for voting"
+    echo "Not eligible for voting age $AGE"
 fi
 
 
