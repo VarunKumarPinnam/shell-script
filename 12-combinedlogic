@@ -3,7 +3,7 @@
 read -p "enter your age in MM/DD/YYYY:" DOB
 
 
-dob_seconds=$( date -d "$DOB" +%S 2>/dev/null)
+dob_seconds=$( date -d "$DOB" +%s 2>/dev/null)
 
 if [ -z "$dob_seconds" ]; then 
     echo " please enter the DOB in mentioned date format"
