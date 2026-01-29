@@ -1,6 +1,6 @@
 #!/bin/bash
 
-FILE="Enter file name with absolute path"
+read -p "Enter file name with absolute path:" FILE 
 
 if [ -f "$FILE"];then 
     echo "$FILE is available at the mentioned location"
