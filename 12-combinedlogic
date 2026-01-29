@@ -12,7 +12,7 @@ fi
 
 current_seconds=$(date +%s)
 
-age=$(( ($current_seconds - $dob_seconds) / 31557600  ))
+AGE=$(( ($current_seconds - $dob_seconds) / 31557600  ))
 
 
 
