@@ -2,7 +2,7 @@
 
 read -p "Enter file name with absolute path:" FILE 
 
-if [ -f "$FILE"];then 
+if [ -f "$FILE" ];then 
     echo "$FILE is available at the mentioned location"
 else
     echo "$FILE is not available"
