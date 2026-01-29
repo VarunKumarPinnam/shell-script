@@ -1,8 +1,23 @@
 #!/bin/bash
 
-read -p "enter your age in MM/DD/YY:" AGE
+read -p "enter your age in MM/DD/YYYY:" DOB
 
-if [ "$(($AGE-($date +%D)))" -ge 18 ]; then 
+
+dob_seconds=$( date -d "$DOB" +%S 2>/dev/null)
+
+if [ -z "$dob_seconds" ]; then 
+    echo " please enter the DOB in mentioned date format"
+    exit
+fi
+
+current_seconds=$(date +%s)
+
+age =$(( ($current_seconds - $dob_seconds) / 31557600  ))
+
+
+
+
+if [ "$AGE" -ge 18 ]; then 
     echo " Eligible for voting"
 else
     echo "Not eligible for voting"
