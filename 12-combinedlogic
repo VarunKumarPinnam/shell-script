@@ -1,0 +1,9 @@
+#!/bin/bash
+
+read -p "enter your age:" AGE
+
+if [ "$AGE" >= 18 ]; then 
+    echo " Eligible for voting"
+else
+    echo "Not eligible for voting"
+fi
