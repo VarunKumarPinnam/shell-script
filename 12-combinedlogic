@@ -12,7 +12,7 @@ fi
 
 current_seconds=$(date +%s)
 
-age = $(( ($current_seconds - $dob_seconds) / 31557600  ))
+age=$(( ($current_seconds - $dob_seconds) / 31557600  ))
 
 
 
@@ -22,3 +22,25 @@ if [ "$AGE" -ge 18 ]; then
 else
     echo "Not eligible for voting"
 fi
+
+
+#!/bin/bash
+
+
+
+# dob_seconds=$(date -d "$DOB" +%s 2>/dev/null)
+
+# if [ -z "$dob_seconds" ]; then
+#     echo "Invalid date format. Please use MM/DD/YYYY"
+#     exit 1
+# fi
+
+# current_seconds=$(date +%s)
+
+# age=$(( (current_seconds - dob_seconds) / 31557600 ))
+
+# if [ "$age" -ge 18 ]; then
+#     echo "Eligible for voting (Age: $age)"
+# else
+#     echo "Not eligible for voting (Age: $age)"
+# fi
