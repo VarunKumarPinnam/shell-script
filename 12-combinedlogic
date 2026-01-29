@@ -1,8 +1,8 @@
 #!/bin/bash
 
-read -p "enter your age:" AGE
+read -p "enter your age in MM/DD/YY:" AGE
 
-if [ "$AGE" -ge 18 ]; then 
+if [ "$(($AGE-($date +%D)))" -ge 18 ]; then 
     echo " Eligible for voting"
 else
     echo "Not eligible for voting"
