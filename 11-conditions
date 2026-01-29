@@ -1,0 +1,9 @@
+#!/bin/bash
+
+FILE="Enter file name with absolute path"
+
+if [ -f "$FILE"];then 
+    echo "$FILE is available at the mentioned location"
+else
+    echo "$FILE is not available"
+fi
