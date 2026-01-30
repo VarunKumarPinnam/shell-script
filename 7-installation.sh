@@ -34,3 +34,17 @@ if dnf list installed mysql &> /dev/null; then
     fi
 
 fi
+
+if dnf list installed nodejs &> /dev/null; then 
+        echo "nodejs already installed"
+    else
+        echo "Installing nodejs"
+        dnf install nodejs -y
+
+    if [ $? -ne 0 ]; then 
+        echo "nodejs installaion..failed"
+     else
+        echo "nodejs installation..completed"
+    fi
+
+fi
