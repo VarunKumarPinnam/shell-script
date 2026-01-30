@@ -18,8 +18,8 @@ VALIDATION(){
 if dnf list installed nginx &> /dev/null; then 
         echo "Nginx already installed"
     else
-        echo "Installing ngginx"
-        dnf install nginx -y
+        echo "Installing nginx"
+        dnf install ngisnx -y
 
 VALIDATION $? "nginx installation"
 
@@ -28,8 +28,8 @@ fi
 if dnf list installed mysql &> /dev/null; then 
         echo "mysql already installed"
     else
-        echo "Installing myysql"
-        dnf install mysql -y
+        echo "Installing mysql"
+        dnf install myssql -y
 
 VALIDATION $? "mysql installation"
 
