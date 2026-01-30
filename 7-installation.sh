@@ -7,11 +7,14 @@ if [ "$USERID" -ne 0 ]; then
     exit 1
 fi
 
-echo "Installing ngnix"
-dnf install ngnix -y
+if dnf list installed nginx &> /dev/null;then 
+    echo "Nginx already installed"
+else
+    echo "Installing nginx"
+dnf install nginx -y
 
 if [ $? -ne 0 ]; then 
     echo "Nginx installaion..failed"
 else
-    echo "Ngnix installation..completed"
+    echo "Nginx installation..completed"
 fi
