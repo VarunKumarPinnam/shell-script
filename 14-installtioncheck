@@ -1,0 +1,35 @@
+#!/bin/bash
+
+USERID=$(id -u)
+
+if [ "$USERID" -ne 0 ]; then 
+    echo "Only root users can execute this script"
+    exit 1
+fi
+
+VALIDATION(){
+    if [ $1 -ne 0 ]; then 
+        echo "$2 is failed"
+    else 
+        echo "$2 is completed"
+    fi
+}
+
+EXISTS(){
+    if dnf list installed $1 &> /dev/null; then 
+        echo "$1 already installed"
+    else
+        echo "Installing $1"
+}
+
+EXISTS nginx
+dnf install nginx -y
+VALIDATION $? "nginx installation"
+
+EXISTS mysql
+dnf install mysql -y
+VALIDATION $? "mysql installation"
+
+EXISTS nodejs
+dnf install nodejs -y
+VALIDATION $? "nodejs installation"

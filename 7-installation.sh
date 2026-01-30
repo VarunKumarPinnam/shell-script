@@ -19,7 +19,7 @@ if dnf list installed nginx &> /dev/null; then
         echo "Nginx already installed"
     else
         echo "Installing nginx"
-        dnf install ngisnx -y
+        dnf install nginx -y
 
 VALIDATION $? "nginx installation"
 
@@ -29,7 +29,7 @@ if dnf list installed mysql &> /dev/null; then
         echo "mysql already installed"
     else
         echo "Installing mysql"
-        dnf install myssql -y
+        dnf install mysql -y
 
 VALIDATION $? "mysql installation"
 
