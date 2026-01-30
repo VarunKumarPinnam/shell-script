@@ -7,29 +7,30 @@ if [ "$USERID" -ne 0 ]; then
     exit 1
 fi
 
-VALIDATION(){
+validation(){
     if [ $1 -ne 0 ]; then 
         echo "$2 is failed"
+        exit 1
     else 
         echo "$2 is completed"
     fi
 }
 
-EXISTS(){
+checksoft(){
     if dnf list installed $1 &> /dev/null; then 
         echo "$1 already installed"
+        exit 1
     else
         echo "Installing $1"
+        dnf install $1 -y
+    fi
 }
 
-EXISTS nginx
-dnf install nginx -y
-VALIDATION $? "nginx installation"
+checksoft nginx
+validation $? "nginx installation"
 
-EXISTS mysql
-dnf install mysql -y
-VALIDATION $? "mysql installation"
+checksoft mysql
+validation $? "mysql installation"
 
-EXISTS nodejs
-dnf install nodejs -y
-VALIDATION $? "nodejs installation"
+checksoft nodejs
+validation $? "nodejs installation"
