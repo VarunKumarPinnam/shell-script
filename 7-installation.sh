@@ -7,31 +7,30 @@ if [ "$USERID" -ne 0 ]; then
     exit 1
 fi
 
+VALIDATION(){
+    if [ $1 -ne 0 ]; then 
+        echo "$2 is failed"
+    else 
+        echo "$2 is completed"
+}
+
 if dnf list installed nginx &> /dev/null; then 
         echo "Nginx already installed"
     else
-        echo "Installing nginx"
+        echo "Installing ngginx"
         dnf install nginx -y
 
-    if [ $? -ne 0 ]; then 
-        echo "Nginx installaion..failed"
-     else
-        echo "Nginx installation..completed"
-    fi
+VALIDATION $? "nginx installation"
 
 fi
 
 if dnf list installed mysql &> /dev/null; then 
         echo "mysql already installed"
     else
-        echo "Installing mysql"
+        echo "Installing myysql"
         dnf install mysql -y
 
-    if [ $? -ne 0 ]; then 
-        echo "mysql installaion..failed"
-     else
-        echo "mysql installation..completed"
-    fi
+VALIDATION $? "mysql installation"
 
 fi
 
@@ -41,10 +40,6 @@ if dnf list installed nodejs &> /dev/null; then
         echo "Installing nodejs"
         dnf install nodejs -y
 
-    if [ $? -ne 0 ]; then 
-        echo "nodejs installaion..failed"
-     else
-        echo "nodejs installation..completed"
-    fi
+VALIDATION $? "nodejs installation"
 
 fi
