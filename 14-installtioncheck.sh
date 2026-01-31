@@ -70,8 +70,8 @@ install_if_missing() {
 install_if_missing ngginx
 validation $? "nginx installation"
 
- install_if_missing mysql
- validation $? "mysql installation"
+install_if_missing mysql
+validation $? "mysql installation"
 
- install_if_missing nodejs
- validation $? "nodejs installation"
+install_if_missing nodejs
+validation $? "nodejs installation"
