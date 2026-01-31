@@ -13,7 +13,7 @@ mkdir -p $LOGS_DIRECTORY
 validation()
 {
   if [ $1 -ne 0 ]; then 
-    echo "$2 installation failed | tee -a $LOGS_FILE
+    echo "$2 installation failed" | tee -a $LOGS_FILE
     exit 1
 else
     echo "$2 installation completed" | tee -a $LOGS_FILE
