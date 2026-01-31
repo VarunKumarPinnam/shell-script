@@ -36,4 +36,4 @@ for pkg in $@
 do
     install_if_missing $pkg
     validation $? "$pkg"
-Done
+done
