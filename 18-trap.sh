@@ -25,7 +25,7 @@ install_if_missing()
   if dnf list installed $1 &>/dev/null; then
     return 2
 else
-    echo  -e "$G Installing $1 $N" | tee -a $LOGS_FILE
+    echo  -e "${G} Installing $1 ${N}" | tee -a $LOGS_FILE
     dnf install $1 -y &>> $LOGS_FILE
     return $?
 fi
