@@ -17,7 +17,7 @@ validation()
     exit 1
 else
     echo "$2 installation completed" | tee -a $LOGS_FILE
-    
+ fi
 }
 
 install_if_missing()
