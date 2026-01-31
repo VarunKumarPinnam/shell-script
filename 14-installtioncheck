@@ -55,14 +55,13 @@ validation() {
 }
 
 install_if_missing() {
-    local pkg="$1"
 
-    if dnf list installed "$pkg" &>/dev/null; then
-        echo "$pkg already installed"
+    if dnf list installed "$1" &>/dev/null; then
+        echo "$1 already installed"
         return 0
     else
-        echo "Installing $pkg"
-        dnf install "$pkg" -y
+        echo "Installing $1"
+        dnf install "$1" -y
         return $?
        echo  "Done"
     fi
