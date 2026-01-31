@@ -14,7 +14,7 @@ validation()
 {
   if [ $1 -eq 0 ]; then 
     echo "$2 installation completed" | tee -a $LOGS_FILE
-  elif [ $1 -eq 2 ];then
+  elif [ $1 -eq 3 ];then
     echo "$2 already installed..skipping the installation" | tee -a $LOGS_FILE
   else
     echo "$2 installation is failed" | tee -a $LOGS_FILE
@@ -24,7 +24,7 @@ validation()
 install_if_missing()
 {
   if dnf list installed $1 &>/dev/null; then
-    return 2
+    return 3
 else
     echo "Installing $1"
     dnf install $1 -y | tee -a $LOGS_FILE
