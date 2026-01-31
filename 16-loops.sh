@@ -32,11 +32,8 @@ else
 fi
 }
 
-install_if_missing nginx
-validation $? "nginx"
-
-install_if_missing mysql
-validation $? "mysql"
-
-install_if_missing nodejs
-validation $? "nodejs"
+for pkg in $@ 
+do
+    install_if_missing $pkg
+    validation $? "$pkg"
+Done
