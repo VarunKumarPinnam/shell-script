@@ -67,7 +67,7 @@ install_if_missing() {
     fi
 }
 
-install_if_missing ngginx
+install_if_missing nginx
 validation $? "nginx installation"
 
 install_if_missing mysql

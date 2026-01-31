@@ -33,4 +33,4 @@ fi
 }
 
 install_if_missing nginx
-validation $? nginx
+validation $? "nginx"
