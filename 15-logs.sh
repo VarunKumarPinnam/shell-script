@@ -12,11 +12,12 @@ mkdir -p $LOGS_DIRECTORY
 
 validation()
 {
-  if [ $1 -ne 0 ]; then 
-    echo "$2 installation failed" | tee -a $LOGS_FILE
-    exit 1
-else
+  if [ $1 -eq 0 ]; then 
     echo "$2 installation completed" | tee -a $LOGS_FILE
+  elif [ $1 -eq 2 ];then
+    echo "$2 already installed..skipping the installation" | tee -a $LOGS_FILE
+  else
+    echo "$2 installation is failed" | tee -a $LOGS_FILE
  fi
 }
 
