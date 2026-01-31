@@ -24,7 +24,7 @@ validation()
 install_if_missing()
 {
   if dnf list installed $1 &>/dev/null; then
-        return 2
+    return 2
 else
     echo "Installing $1"
     dnf install $1 -y | tee -a $LOGS_FILE
