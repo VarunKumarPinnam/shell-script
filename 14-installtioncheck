@@ -63,7 +63,7 @@ install_if_missing() {
     else
         echo "Installing $pkg"
         dnf install "$pkg" -y
-        #return $?
+        return $?
        echo  "Done"
     fi
 }
