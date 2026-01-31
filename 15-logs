@@ -22,7 +22,7 @@ else
 
 install_if_missing()
 {
-  if dnf list installed $1 &>/dev/null; then 
+  if dnf list installed $1 &>/dev/null; then
     echo "$1 already installed" | tee -a $LOGS_FILE
     return 0
 else
@@ -34,6 +34,3 @@ fi
 
 install_if_missing "nginx" 
 validation $? "nginx"
-
-
-
