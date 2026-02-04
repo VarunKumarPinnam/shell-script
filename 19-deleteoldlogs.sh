@@ -12,15 +12,15 @@ LOGS_FILE="$LOGS_DIRECTORY/$0.log"
 if [ ! -d $LOGS_DIRECTORY ]; then 
     echo "$LOGS_DIRECTORY does not exists"
     exit 1
-else
-    FILE_TO_DELETE=$(find $LOGS_DIRECTORY -name "*.log" -mtime +14 )
- #    echo "files to delete" 
 fi
 
-while IFS= read -r filepath; 
-    do
-        # Process each line here
-        echo "Deleting file: $filepath"
-        rm -f $filepath &>>$LOGS_FILE
-        echo "Deleted file: $filepath"
-    done <<< $FILES_TO_DELETE
+    FILE_TO_DELETE=$(find $LOGS_DIRECTORY -name "*.log" -mtime +14 )
+    echo "files to delete" 
+      
+# while IFS= read -r filepath; 
+#     do
+#         # Process each line here
+#         echo "Deleting file: $filepath"
+#         rm -f $filepath &>>$LOGS_FILE
+#         echo "Deleted file: $filepath"
+#     done <<< $FILES_TO_DELETE
