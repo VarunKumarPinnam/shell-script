@@ -4,10 +4,10 @@ R="\e[31m"
 G="\e[32m"
 Y="\e[33m"
 N="\e[0m"
-
-
 LOGS_DIRECTORY="/home/ec2-user/app_logs"
-LOGS_FILE="$LOGS_DIRECTORY/$0.log"
+SCRIPT_NAME=$(basename "$0")
+LOGS_FILE="$LOGS_DIRECTORY/${SCRIPT_NAME}_$(date '+%Y-%m-%d_%H-%M-%S').log"
+
 
 if [ ! -d $LOGS_DIRECTORY ]; then 
     echo "$LOGS_DIRECTORY does not exists"
@@ -21,6 +21,6 @@ while IFS= read -r filepath;
     do
         # Process each line here
         echo "Deleting file: $filepath"
-        rm -f $filepath &>>$LOGS_FILE
-        echo "Deleted file: $filepath"
+        rm -f $filepath 
+        echo "$(date '+%Y-%m-%d_%H-%M-%S') | Deleted file: $filepath" &>>$LOGS_FILE
     done <<< $FILES_TO_DELETE
