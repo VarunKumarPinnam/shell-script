@@ -11,6 +11,7 @@ N="\e[0m"
 SOURCE_DIR=$1
 DEST_DIR=$2
 DAYS=${3:-14} # default 14 days if not provided
+DEST_DIR_NAME=$(basename "$DEST_DIR")
 
 #--ROOT User Check--
 if [ "$USERID" -ne 0 ]; then 
@@ -59,12 +60,12 @@ else
     #app_logs.timestamp.zip
     log "files to archieve: $FILES"
     TIMESTAMP=$(date +%F-%H-%M-%S)
-    ZIP_FILE_NAME="$DEST_DIR/$DEST_DIR-$TIMESTAMP.tar.gz"
+    ZIP_FILE_NAME="$DEST_DIR/${DEST_DIR_NAME}-$TIMESTAMP.tar.gz"
     echo "Archieve name: $ZIP_FILE_NAME"
     tar -zvcf $ZIP_FILE_NAME $FILES
 
     #check archeival is success or not 
-    if [ -z $ZIP_FILE_NAME ]; then 
+    if [ $? -eq 0 ]; then 
         echo -e "$GArcheival is success$N"
     else  
         echo -e "$GArcheival is failed$N"
