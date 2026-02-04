@@ -8,6 +8,9 @@ R="\e[31m"
 G="\e[32m"
 Y="\e[33m"
 N="\e[0m"
+SOURCE_DIR=$1
+DEST_DIR=$2
+DAYS=${3:-14} # default 14 days if not provided
 
 #--ROOT User Check--
 if [ "$USERID" -ne 0 ]; then 
@@ -26,3 +29,13 @@ if [ $# -lt 2 ]; then
     usage
 fi
 
+if [ ! -d $SOURCE_DIR ]; then
+    echo -e "$R $SOURCE_DIR does not exists"
+    exit 1
+fi
+
+
+if [ ! -d $DEST_DIR ]; then
+    echo -e "$R $DEST_DIR does not exists"
+    exit 1
+fi
