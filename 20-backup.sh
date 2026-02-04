@@ -55,4 +55,18 @@ log "DAYS     : $DAYS"
 if [ -z "$FILES" ]; then
     echo -e "$R No files found to archieve $N"
     exit 1
+else   
+    #app_logs.timestamp.zip
+    log "files to archieve: $FILES"
+    TIMESTAMP=$(date +%F-%H-%M-%S)
+    ZIP_FILE_NAME="$DEST_DIR-$TIMESTAMP.tar.gz"
+    echo "Archieve name: $ZIP_FILE_NAME"
+    tar -zvcf $ZIP_FILE_NAME | $FILES
+
+    #check archeival is success or not 
+    if [ -z $ZIP_FILE_NAME ]; then 
+        echo -e "$GArcheival is success$N"
+    else  
+        echo -e "$GArcheival is failed$N"
+    fi
 fi
