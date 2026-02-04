@@ -14,8 +14,8 @@ if [ ! -d $LOGS_DIRECTORY ]; then
     exit 1
 fi
 
-    FILE_TO_DELETE=$(find $LOGS_DIRECTORY -name "*.log" -mtime +14 )
-    echo "files to delete" 
+    FILEs_TO_DELETE=$(find $LOGS_DIRECTORY -name "*.log" -mtime +14 )
+    echo "files to delete : $FILES_TO_DELETE" 
       
 # while IFS= read -r filepath; 
 #     do
