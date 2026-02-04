@@ -63,11 +63,21 @@ else
     ZIP_FILE_NAME="$DEST_DIR/${DEST_DIR_NAME}-$TIMESTAMP.tar.gz"
     echo " Archieve name: $ZIP_FILE_NAME"
     tar -zcf $ZIP_FILE_NAME $FILES 2>/dev/null
+  # tar -zvcf $ZIP_FILE_NAME $FILES 2>/dev/null ## to list the files which are archived 
 
     #check archeival is success or not 
     if [ $? -eq 0 ]; then 
         echo -e "$G Archeival is success $N"
+
+       while IFS= read -r filepath
+        do
+            echo "Deleting file: $filepath"
+            rm -f "$filepath"
+            echo "Deleted file: $filepath" >>"$LOGS_FILE"
+        done <<< "$FILES"
+
     else  
         echo -e "$G Archeival is failed $N"
+        exit 1
     fi
 fi
