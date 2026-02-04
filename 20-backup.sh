@@ -59,7 +59,7 @@ else
     #app_logs.timestamp.zip
     log "files to archieve: $FILES"
     TIMESTAMP=$(date +%F-%H-%M-%S)
-    ZIP_FILE_NAME="$DEST_DIR-$TIMESTAMP.tar.gz"
+    ZIP_FILE_NAME="$DEST_DIR/$DEST_DIR-$TIMESTAMP.tar.gz"
     echo "Archieve name: $ZIP_FILE_NAME"
     tar -zvcf $ZIP_FILE_NAME $FILES
 
