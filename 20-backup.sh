@@ -45,12 +45,12 @@ if [ ! -d $DEST_DIR ]; then
 fi
 
 #Find the files
-FILES=$(find $SOURCE_DIR -name "*.log* -type f -mtime +$DAYS)
+FILES=$(find $SOURCE_DIR -name "*.log" -type f -mtime +$DAYS)
 
 log "Backup started"
-log "Source dir: $SOURCE_DIR
-log "Dest dir  : $DEST_DIR
-log "DAYS"     : $DAYS
+log "Source dir: $SOURCE_DIR"
+log "Dest dir  : $DEST_DIR"
+log "DAYS"     : $DAYS"
 
 if [ -z "{$FILES}" ]; then
     echo -e "$R No files found to archieve $N"
