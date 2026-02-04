@@ -53,5 +53,6 @@ log "Dest dir  : $DEST_DIR
 log "DAYS"     : $DAYS
 
 if [ -z "{$FILES}" ]; then
-    echo "$R No files found to archieve $N"
+    echo -e "$R No files found to archieve $N"
+    exit 1
 fi
