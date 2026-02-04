@@ -30,12 +30,12 @@ if [ $# -lt 2 ]; then
 fi
 
 if [ ! -d $SOURCE_DIR ]; then
-    echo -e "$R $SOURCE_DIR does not exists"
+    echo -e "$R source dir $SOURCE_DIR does not exists"
     exit 1
 fi
 
 
 if [ ! -d $DEST_DIR ]; then
-    echo -e "$R $DEST_DIR does not exists"
+    echo -e "$R dest dir $DEST_DIR does not exists"
     exit 1
 fi
