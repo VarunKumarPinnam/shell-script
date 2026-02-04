@@ -13,7 +13,7 @@ if [ ! -d $LOGS_DIRECTORY ]; then
     echo "$LOGS_DIRECTORY does not exists"
     exit 1
 else
-    FILE_TO_DELETE=$(find $LOGS_DIRECTORY -name "*.log" +mtime +14 )
+    FILE_TO_DELETE=$(find $LOGS_DIRECTORY -name "*.log" -mtime +14 )
  #    echo "files to delete" 
 fi
 
