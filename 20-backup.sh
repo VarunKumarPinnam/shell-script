@@ -25,6 +25,10 @@ usage(){
     exit 1 
 }
 
+log(){
+    echo -e "$Y $(date '+%Y-%m-%d_%H-%M-%S') | $1" | tee -a $LOGS_FILE
+}
+
 if [ $# -lt 2 ]; then
     usage
 fi
@@ -38,4 +42,15 @@ fi
 if [ ! -d $DEST_DIR ]; then
     echo -e "$R dest dir $DEST_DIR does not exists"
     exit 1
+fi
+#Find the files
+FILES=$(find $SOURCE_DIR -name "*.log* -type f -mtime +$DAYS)
+
+log "Backup started"
+log "Source dir: $SOURCE_DIR
+log "Dest dir  : $DEST_DIR
+log "DAYS"     : $DAYS
+
+if [ -z $FILES ]; then
+    echo "$R No files found to archieve $N"
 fi
