@@ -62,7 +62,7 @@ else
     TIMESTAMP=$(date +%F-%H-%M-%S)
     ZIP_FILE_NAME="$DEST_DIR/${DEST_DIR_NAME}-$TIMESTAMP.tar.gz"
     echo " Archieve name: $ZIP_FILE_NAME"
-    tar -zvcf $ZIP_FILE_NAME $FILES 2>/dev/null
+    tar -zcf $ZIP_FILE_NAME $FILES 2>/dev/null
 
     #check archeival is success or not 
     if [ $? -eq 0 ]; then 
