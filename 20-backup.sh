@@ -43,6 +43,7 @@ if [ ! -d $DEST_DIR ]; then
     echo -e "$R dest dir $DEST_DIR does not exists"
     exit 1
 fi
+
 #Find the files
 FILES=$(find $SOURCE_DIR -name "*.log* -type f -mtime +$DAYS)
 
@@ -51,6 +52,6 @@ log "Source dir: $SOURCE_DIR
 log "Dest dir  : $DEST_DIR
 log "DAYS"     : $DAYS
 
-if [ -z $FILES ]; then
+if [ -z "{$FILES}" ]; then
     echo "$R No files found to archieve $N"
 fi
