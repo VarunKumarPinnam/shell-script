@@ -1,10 +1,18 @@
 #!/bin/bash
-
+LOGS_DIRECTORY="/var/log/diskusage"
+SCRIPT_NAME=$(basename "$0" .sh)
+LOGS_FILE="$LOGS_DIRECTORY/${SCRIPT_NAME}_$(date '+%Y-%m-%d_%H-%M-%S').log"
 R="\e[31m"
 G="\e[32m"
 Y="\e[33m"
 N="\e[0m"
 MESSAGE=""
+
+mkdir -p $LOGS_DIRECTORY
+
+log (){
+    echo "$(date '+%Y-%m-%d_%H-%M-%S') | $1" | tee -a $LOGS_FILE
+}
 
 DISK_USAGE=$(df -hT | grep -v Filesystem)
 USAGE_THRESHOLD=3
@@ -18,4 +26,5 @@ do
     fi        
 done <<< $DISK_USAGE
 
-echo -e $MESSAGE
+echo -e $MESSAGE | tee -a log "$MESSAGE" 
+#log "$MESSAGE"
