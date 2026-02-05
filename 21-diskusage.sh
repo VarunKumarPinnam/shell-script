@@ -11,4 +11,5 @@ USAGE_THRESHOLD=3
 while IFS= read -r line
 do 
     USAGE=$(echo $line)
+    echo $USAGE
 done <<< $DISK_USAGE
