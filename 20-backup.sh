@@ -71,9 +71,9 @@ else
 
        while IFS= read -r filepath
         do
-            echo "Deleting file: $filepath"
+            echo " Deleting file: $filepath"
             rm -f "$filepath"
-            echo "Deleted file: $filepath" >>"$LOGS_FILE"
+            echo " Deleted file: $filepath" >>"$LOGS_FILE"
         done <<< "$FILES"
 
     else  
