@@ -30,6 +30,6 @@ do
 done <<< $DISK_USAGE
 
 #echo -e $MESSAGE
-log  "$MESSAGE"
+echo -e  "$MESSAGE"
 
 sh mail.sh "varunvarma.vpj@gmail.com" "High Disk Usage Alert on $IP" "$MESSAGE" "High Disk Usage" "$IP" "DevOps team"

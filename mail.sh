@@ -18,3 +18,4 @@ echo ""
 echo "$FINAL_MSG
 "
 } | msmtp "$TO_ADDRESS"
+
