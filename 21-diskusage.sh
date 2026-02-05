@@ -2,6 +2,7 @@
 LOGS_DIRECTORY="/var/log/diskusage"
 SCRIPT_NAME=$(basename "${BASH_SOURCE[0]:-$0}" .sh)
 SCRIPT_NAME=${SCRIPT_NAME#*-}
+IP=$(curl http://169.254.169.254/latest/meta-data/local-ipv4)
 
 LOGS_FILE="$LOGS_DIRECTORY/${SCRIPT_NAME}_$(date '+%Y-%m-%d_%H-%M-%S').log"
 R="\e[31m"
@@ -30,3 +31,5 @@ done <<< $DISK_USAGE
 
 #echo -e $MESSAGE
 log  "$MESSAGE"
+
+sh mail.sh "varunvarma.vpj@gmail.com" "High Disk Usage Alert on $IP" "$MESSAGE" "High Disk Usage" "$IP" "DevOps team"
