@@ -11,7 +11,7 @@ MESSAGE=""
 mkdir -p $LOGS_DIRECTORY
 
 log (){
-    echo "$(date '+%Y-%m-%d_%H-%M-%S') | $1" | tee -a $LOGS_FILE
+    echo -e "$(date '+%Y-%m-%d_%H-%M-%S') | $1" | tee -a $LOGS_FILE
 }
 
 DISK_USAGE=$(df -hT | grep -v Filesystem)
@@ -27,4 +27,4 @@ do
 done <<< $DISK_USAGE
 
 #echo -e $MESSAGE
-log  "echo -e $MESSAGE"
+log  "$MESSAGE"
