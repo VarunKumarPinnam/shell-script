@@ -1,6 +1,8 @@
 #!/bin/bash
 LOGS_DIRECTORY="/var/log/diskusage"
-SCRIPT_NAME=$(basename "$0" .sh | sed 's/^[0-9]\+-//')
+SCRIPT_NAME=$(basename "${BASH_SOURCE[0]:-$0}" .sh)
+SCRIPT_NAME=${SCRIPT_NAME#*-}
+
 LOGS_FILE="$LOGS_DIRECTORY/${SCRIPT_NAME}_$(date '+%Y-%m-%d_%H-%M-%S').log"
 R="\e[31m"
 G="\e[32m"
