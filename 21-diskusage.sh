@@ -26,5 +26,5 @@ do
     fi        
 done <<< $DISK_USAGE
 
-echo -e $MESSAGE | tee -a log "$MESSAGE" 
-#log "$MESSAGE"
+#echo -e $MESSAGE
+log "$MESSAGE"
